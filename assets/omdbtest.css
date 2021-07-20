@@ -1,0 +1,83 @@
+::selection{background: #EEEEEE;}
+html, body, h1, h2, h3, h4, h5{margin: 0; font-family: 'Poppins', sans-serif; color: #424242;}
+img{max-width: 100%; height: auto;}
+
+.wrapper{width: auto; margin: 0 auto; padding: 0 15px;}
+
+/* header section css */
+.main-bg{background: #000000 url('../assets/images/banner.jpg') no-repeat top center / cover; position: relative;}
+.main-bg::before{content: ''; background: rgba(0,0,0,0.72); position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.main-bg.fixed{position: sticky; position: -webkit-sticky; width: 100%; top: -165px; z-index: 99;}
+.main-bg.fixed header h1{visibility: hidden;}
+header{position: relative; text-align: center;}
+header h1.logo{color: #62C055; font-size: 60px; font-weight: 900; line-height:45px; padding: 50px 0 0;}
+header h1.logo span{display: block; font-size: 22px; font-weight: 200; letter-spacing: 2px;}
+
+/* Search section css */
+form.search-movie{position: relative; max-width:620px; margin: 0px auto 25px; top: 25px; z-index: 99; }
+form.search-movie label{position: absolute; top: 16px; font-size: 15px; left: 15px; color: rgba(0,0,0,0.6); font-weight: 300; pointer-events: none; transition: all 0.3s;}
+form.search-movie label.animatelabel{font-size: 12px; top: 6px; color: #62C055; font-weight: 400;}
+form.search-movie input{ width: 100%; height: 55px; font-size:20px; padding: 18px 12px 0; border-radius: 12px; border: 2px solid rgb(98 192 85 / 90%); box-sizing: border-box; transition: all 0.5s;}
+form.search-movie input:focus, form.search-movie input:active, form.search-movie input:hover{box-shadow:0px 0px 10px 2px rgb(0 0 0 / 30%); outline: none;}
+
+/* Result count css */
+.result-number{margin: 0px auto; background: #62C055; color: #ffffff; max-width: 200px; text-align: center; height: 30px;
+border-radius: 0px 0 12px 12px; position: absolute; left: 0; right: 0;}
+.result-number p {margin-top: 3px;}
+.result-number p span{font-weight: 700;}
+
+/* All results css */
+.result-list{display: flex; flex-wrap: wrap; justify-content: space-between; margin: 100px 0 0; width: 100%;}
+.result{display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.2); margin-bottom: 30px; padding-bottom: 20px;}
+.result .poster{width: 40%; margin-right: 5%;}
+.result .maininfo{width: 50%;}
+.result .maininfo h3 {font-size: 18px; font-weight: 600;}
+.result .maininfo h3 span{padding: 0px 5px; color: #ffffff; background-color: #62C055}
+.result .maininfo p.rating{margin: 10px 0 5px;}
+.result .maininfo p.rating svg{width: 20px; position: relative; top: 4px;}
+.result .maininfo p.rating svg polygon{fill: #F4AD33;}
+.result .maininfo p.rating span{font-weight: 600;}
+.result .maininfo .language span{font-weight: 200;}
+.result .cast p span{font-weight: 200;}
+.result .details {width: 100%; display: block;}
+.result .details p{margin: 0 0 10px 0; display: none;}
+.result .details span{color: #62C055; cursor: pointer;}
+.result .details span span.hidetext{display: none;}
+.result .details span.expandactive span.hidetext{display: block;}
+.result .details span.expandactive span.expandtext{display: none;}
+
+/* No results found css */
+.no-reults{margin: 100px auto 0; text-align: center; font-size: 20px; opacity: 0.7;}
+.no-reults p{margin: 0;}
+.no-reults span{font-size: 15px;}
+
+/* Mobile and small Tab Devices css */
+@media(min-width:768px){
+    header h1.logo{font-size: 80px; line-height:60px;}
+    header h1.logo span{font-size: 32px;}
+    form.search-movie{margin: 0px auto 25px;}
+    .result{width: 45%; margin: 30px 2% 0 0; justify-content: flex-start; align-items: flex-start; align-content: baseline; min-height: 410px;}
+    .result:nth-child(2n){margin-right: 0;}
+    .result .poster{margin-bottom: 20px;}
+    .result .cast{min-height: 72px;}
+    .result .cast p{margin: 0;}
+    .result .details p{max-height: 75px; overflow-y: auto;}
+    .result .poster{min-height: 260px;}
+    .result .maininfo{min-height: 260px;}
+}  
+/* Tab and Laptop Devices css */
+@media(min-width:992px){
+    .result-list{justify-content: flex-start;;}
+    .result{width: 31%; min-height: 450px;}
+    .result:nth-child(2n){margin-right: 2%;}
+    .result:nth-child(3n){margin-right: 0;}
+    
+}    
+/* Large Devices css */
+@media(min-width:1400px){
+    .result{width: 23%; min-height: 410px;}
+    .result:nth-child(2n){margin-right: 2%;}
+    .result:nth-child(3n){margin-right: 2%;}
+    .result:nth-child(4n){margin-right: 0;}
+    .result .poster{min-height: 212px;}
+}     
